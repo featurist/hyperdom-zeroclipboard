@@ -1,0 +1,27 @@
+{
+  "name": "plastiq-zeroclipboard",
+  "version": "1.0.0",
+  "description": "zeroclipboard for plastiq",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "plastiq": "*",
+    "zeroclipboard": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/featurist/plastiq-zeroclipboard.git"
+  },
+  "keywords": [
+    "zeroclipboard",
+    "plastiq"
+  ],
+  "author": "Tim Macfarlane <timmacfarlane@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/featurist/plastiq-zeroclipboard/issues"
+  },
+  "homepage": "https://github.com/featurist/plastiq-zeroclipboard"
+}
