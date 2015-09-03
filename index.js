@@ -39,9 +39,16 @@ module.exports.config = function () {
 function setData(client, data) {
   if (typeof data === 'string') {
     client.setText(data);
+  } else if (typeof data === 'function') {
+    client.setText(data());
   } else {
     Object.keys(data).forEach(function (mimeType) {
-      client.setData(mimeType, data[mimeType]);
+      var entry = data[mimeType];
+      var content = typeof entry === 'function'
+        ? entry()
+        : entry;
+
+      client.setData(mimeType, content);
     });
   }
 }

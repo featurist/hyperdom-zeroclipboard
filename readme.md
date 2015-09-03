@@ -23,12 +23,12 @@ var vdom = zeroClipboard([options], data, buttonVdom);
 ```
 
 * `options.oncopy` - function that is called after the copy has finished
-* `data` - either a string, or an object containing data for each mime-type, e.g.:
+* `data` - either a string, a function that returns a string, or an object containing a string or function for each mime-type, e.g.:
 
     ```js
     {
       'text/plain': 'some text',
-      'text/html': '<h1>some html</h1>'
+      'text/html': function () { return '<h1>some html</h1>'; }
     }
     ```
 
