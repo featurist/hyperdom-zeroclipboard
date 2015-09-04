@@ -22,7 +22,8 @@ plastiq.append(document.body, render, {});
 var vdom = zeroClipboard([options], data, buttonVdom);
 ```
 
-* `options.oncopy` - function that is called after the copy has finished
+* `options.oncopy` - function that is called after the copy has finished.
+* `options.onerror` - function that is called when an error occurs, usually if flash isn't available. See the [error event](https://github.com/zeroclipboard/zeroclipboard/blob/master/docs/api/ZeroClipboard.md#error) in ZeroClipboard documentation.
 * `data` - either a string, a function that returns a string, or an object containing a string or function for each mime-type, e.g.:
 
     ```js

@@ -9,11 +9,17 @@ module.exports = function (options, data, vdom) {
 
   return h.component(
     {
-      oncopy: options && options.oncopy,
+      oncopy: options && h.refreshify(options.oncopy),
+      onerror: options && h.refreshify(options.onerror),
       data: data,
       onadd: function (element) {
         var self = this;
         this.client = new ZeroClipboard(element);
+
+        this.client.on('error', function () {
+          ZeroClipboard.destroy();
+          self.onerror.apply(self, arguments);
+        });
 
         this.client.on('ready', function () {
           self.client.on('copy', function () {
