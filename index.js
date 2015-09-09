@@ -18,7 +18,9 @@ module.exports = function (options, data, vdom) {
 
         this.client.on('error', function () {
           ZeroClipboard.destroy();
-          self.onerror.apply(self, arguments);
+          if (self.onerror) {
+            self.onerror.apply(self, arguments);
+          }
         });
 
         this.client.on('ready', function () {
