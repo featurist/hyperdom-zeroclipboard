@@ -1,6 +1,6 @@
 {
   "name": "plastiq-zeroclipboard",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "zeroclipboard for plastiq",
   "main": "index.js",
   "scripts": {
