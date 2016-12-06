@@ -1,4 +1,4 @@
-var h = require('plastiq').html;
+var h = require('hyperdom').html;
 var ZeroClipboard = require('zeroclipboard');
 
 module.exports = function (options, data, vdom) {

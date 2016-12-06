@@ -1,27 +1,27 @@
 {
-  "name": "plastiq-zeroclipboard",
+  "name": "hyperdom-zeroclipboard",
   "version": "1.2.1",
-  "description": "zeroclipboard for plastiq",
+  "description": "zeroclipboard for hyperdom",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "plastiq": "*",
+    "hyperdom": "*",
     "zeroclipboard": "*"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/featurist/plastiq-zeroclipboard.git"
+    "url": "https://github.com/featurist/hyperdom-zeroclipboard.git"
   },
   "keywords": [
     "zeroclipboard",
-    "plastiq"
+    "hyperdom"
   ],
   "author": "Tim Macfarlane <timmacfarlane@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/featurist/plastiq-zeroclipboard/issues"
+    "url": "https://github.com/featurist/hyperdom-zeroclipboard/issues"
   },
-  "homepage": "https://github.com/featurist/plastiq-zeroclipboard"
+  "homepage": "https://github.com/featurist/hyperdom-zeroclipboard"
 }

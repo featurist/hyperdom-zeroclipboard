@@ -1,10 +1,10 @@
-# ZeroClipboard for Plastiq
+# ZeroClipboard for hyperdom
 
-A plastiq component for [ZeroClipboard](https://github.com/zeroclipboard/zeroclipboard).
+A hyperdom component for [ZeroClipboard](https://github.com/zeroclipboard/zeroclipboard).
 
 ```js
-var plastiq = require('plastiq');
-var h = plastiq.html;
+var hyperdom = require('hyperdom');
+var h = hyperdom.html;
 
 function render(model) {
   return h('div',
@@ -13,7 +13,7 @@ function render(model) {
   );
 }
 
-plastiq.append(document.body, render, {});
+hyperdom.append(document.body, render, {});
 ```
 
 ## api
