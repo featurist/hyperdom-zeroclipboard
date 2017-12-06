@@ -1,4 +1,5 @@
-var h = require('hyperdom').html;
+var hyperdom = require('hyperdom')
+var h = hyperdom.html;
 var ZeroClipboard = require('zeroclipboard');
 
 module.exports = function (options, data, vdom) {
@@ -7,37 +8,38 @@ module.exports = function (options, data, vdom) {
     data = options;
   }
 
-  return h.component(
-    {
-      oncopy: options && h.refreshify(options.oncopy),
-      onerror: options && h.refreshify(options.onerror),
-      data: data,
-      onadd: function (element) {
-        var self = this;
-        this.client = new ZeroClipboard(element);
+  return hyperdom.viewComponent({
+    oncopy: options && h.refreshify(options.oncopy),
+    onerror: options && h.refreshify(options.onerror),
+    data: data,
+    onadd: function (element) {
+      var self = this;
+      this.client = new ZeroClipboard(element);
 
-        this.client.on('error', function () {
-          ZeroClipboard.destroy();
-          if (self.onerror) {
-            self.onerror.apply(self, arguments);
+      this.client.on('error', function () {
+        ZeroClipboard.destroy();
+        if (self.onerror) {
+          self.onerror.apply(self, arguments);
+        }
+      });
+
+      this.client.on('ready', function () {
+        self.client.on('copy', function () {
+          setData(self.client, self.data);
+        });
+
+        self.client.on('aftercopy', function (ev) {
+          if (self.oncopy) {
+            self.oncopy();
           }
         });
-
-        this.client.on('ready', function () {
-          self.client.on('copy', function () {
-            setData(self.client, self.data);
-          });
-
-          self.client.on('aftercopy', function (ev) {
-            if (self.oncopy) {
-              self.oncopy();
-            }
-          });
-        });
-      }
+      });
     },
-    vdom
-  );
+
+    render: function () {
+      return vdom.apply(this)
+    }
+  });
 };
 
 module.exports.config = function () {
